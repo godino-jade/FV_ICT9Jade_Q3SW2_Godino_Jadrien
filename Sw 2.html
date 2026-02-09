@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Q3 Seatwork 2</title>
+
+    <style>
+        body{
+            background-image: url(' AHDAHDHAW');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        nav{
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.40);
+        }
+
+        .container{
+            width: auto;
+            margin: auto;
+            background-color: rgba(144, 206, 244, 0.9);
+            border-radius: 20px;
+            padding: 20px;
+            position: center;
+            box-shadow: 5px 5px 15px 5px #0000006d
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #786565c5;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link">Shop</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link">Locate</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="Search">
+                        <button class="btn btn-info" type="button">Search</button>
+                    </form>
+            </div>
+        </div>
+    </nav>
+
+    <br><br>
+
+    <div class="container">
+        <h1 class="fst-italic" id="header">Find the right phone!</h1>
+        
+        <details class="ontoggle">
+            <summary><b>Here are the instructions:</b></summary>
+            <p id="Instructions"></p>
+        </details>
+
+        <form>
+            <label><b>Enter Price:</b></label>
+                <input type="number" id="price" class="form-control">
+
+            <br>
+
+            <div class="d-grid gap-3">
+                <button type="Submit" class="btn btn-outline-primary btn-light btn-block" onclick="product()">Check</button>
+            </div>
+
+            <br>
+
+            <buttone type="button" class="btn btn-success" onclick="window.location.reload()">Refresh</buttone>
+        </form>
+
+        <br>
+    </div>
+
+    <script>
+       function product(){
+        // get value from inout field
+        var price = document.getElementById('price').value;
+        var disc = number(price * 0.20); // discount amount formula
+        var fprice = disc.toFixed(2); // round off discount to 2 decimal places
+            window.alert("You are eligble for: " + fprice);
+       }
+       document.getElementById('Instructions').innerHTML = " Enter your budget and let's find the right phone for you";
+    </script>
+
+
+</body>
