@@ -8,7 +8,7 @@
 
     <style>
         body{
-            background-image: url(' AHDAHDHAW');
+            background-image: url('https://antdisplay.com/pub/media/porto/44.jpg');
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -20,17 +20,42 @@
         .container{
             width: auto;
             margin: auto;
-            background-color: rgba(144, 206, 244, 0.9);
+            background-color: rgba(8, 50, 20, 0.895);
+            color: #ffffff;
             border-radius: 20px;
             padding: 20px;
             position: center;
             box-shadow: 5px 5px 15px 5px #0000006d
         }
 
+        h1{
+            color: #e9efff;
+        }
+
+        #brandsdisc{
+            padding: 7px;
+            background-color: rgb(35, 37, 63);
+            border-radius: 15px;
+            text-align: center;
+            border-style: solid;
+            border-color: #8f8f8f;
+            border-width: 2px;
+        }
+
+        .row{
+            margin: 4px;
+            padding: 10px;
+            background-color: rgb(23, 16, 59);
+            border-radius: 15px;
+            border-style: solid;
+            border-color: #8f8f8f;
+            border-width: 2px;
+        }
+
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg" style="background-color: #786565c5;">
+    <nav class="navbar navbar-expand-lg" style="background-color: #222222c0;">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
@@ -54,41 +79,65 @@
     <br><br>
 
     <div class="container">
-        <h1 class="fst-italic" id="header">Find the right phone!</h1>
+        <h1 id="header"><b>Find the right phone!</b></h1>
         
         <details class="ontoggle">
-            <summary><b>Here are the instructions:</b></summary>
+            <summary class="fst-italic">Here are the instructions:</summary>
             <p id="Instructions"></p>
         </details>
+        
+        <br>
 
         <form>
-            <label><b>Enter Price:</b></label>
-                <input type="number" id="price" class="form-control">
+            <input type="number" id="price" class="form-control" placeholder="Enter budget here...">
 
-            <br>
+            <br>    
 
             <div class="d-grid gap-3">
-                <button type="Submit" class="btn btn-outline-primary btn-light btn-block" onclick="product()">Check</button>
+                <button type="button" class="btn btn-outline-primary btn-light btn-block" onclick="product()">Check</button>
             </div>
 
             <br>
 
-            <buttone type="button" class="btn btn-success" onclick="window.location.reload()">Refresh</buttone>
+            <div class="d-grid gap-3">
+                <button type="button" class="btn btn-danger btn-block" onclick="window.location.reload()">Refresh</button>
+            </div>
         </form>
 
-        <br>
+        <br><br>
+
+        <div class="container-fluid">
+            <div class="col-sm-3" id="brandsdisc">
+                <h4>Brands & Discounts</h4>
+            </div>
+
+            <br>
+
+            <div class="col-sm-3" id="recobrands">
+                <h5>Recommended Brands</h5>
+                    <div class="row">iPhone</div>
+                    <div class="row">Samsung</div>
+                    <div class="row">Huawei</div>
+                
+                <br>
+
+                <p id="result">You are eligble for:</p>
+            </div>
+        </div>
     </div>
-
+         
+        <br>
+    
     <script>
-       function product(){
-        // get value from inout field
-        var price = document.getElementById('price').value;
-        var disc = number(price * 0.20); // discount amount formula
-        var fprice = disc.toFixed(2); // round off discount to 2 decimal places
-            window.alert("You are eligble for: " + fprice);
+        function product(){
+            let price = document.getElementById("price").value;
+            let disc = price * 0.10; // discount amount formula
+            let fprice = disc.toFixed(2); // round off discount to 2 decimal places
+
+            
+            document.getElementById("result").innerHTML = <p> "You are eligble for: PHP" + fprice </p>;
        }
-       document.getElementById('Instructions').innerHTML = " Enter your budget and let's find the right phone for you";
+
+       document.getElementById('Instructions').innerHTML = " Enter your budget below and let's find the right phone for you.";
     </script>
-
-
 </body>
